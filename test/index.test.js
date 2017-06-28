@@ -285,5 +285,27 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
+  },
+ 'test with array method values': function() {
+
+     var table = new Table({
+      head: ['pop', 'push', 'slice'],
+      style: {
+        head: [],
+        border: []
+      }
+    })
+
+    table.push(['push', 'slice', 'pop'])
+
+    var expected = [
+			'┌──────┬───────┬───────┐',
+			'│ pop  │ push  │ slice │',
+			'├──────┼───────┼───────┤',
+			'│ push │ slice │ pop   │',
+			'└──────┴───────┴───────┘'
+    ]
+
+    table.toString().should.eql(expected.join('\n'))
   }
 }
