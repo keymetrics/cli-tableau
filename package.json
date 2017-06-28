@@ -1,41 +1,49 @@
 {
-    "name": "cli-table",
-    "description": "Pretty unicode tables for the CLI",
-    "version": "1.0.0",
-    "author": {
-      "name": "Guillermo Rauch",
-      "email": "guillermo@learnboost.com"
-    },
-    "contributors": [
-      {
-        "name": "Sonny Michaud",
-        "email": "Michaud.sonny@gmail.com"
-      }
-    ],
-    "maintainers": [
-      {
-        "name": "soyuka",
-        "email": "soyuka@gmail.com"
-      }
-    ],
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/Keymetrics/cli-table.git"
-    },
-    "keywords": ["cli", "colors", "table"],
-    "dependencies": {
-      "colors": "1.0.3"
-    },
-    "devDependencies": {
-      "expresso": "~0.9",
-      "should": "~0.6"
-    },
-    "main": "lib",
-    "files": [
-      "lib"
-    ],
-    "scripts": {
-      "test": "make test"
-    },
-    "engines": { "node": ">= 0.12" }
+  "name": "cli-table",
+  "description": "Pretty unicode tables for the CLI",
+  "version": "1.0.0",
+  "author": {
+    "name": "Guillermo Rauch",
+    "email": "guillermo@learnboost.com"
+  },
+  "contributors": [
+    {
+      "name": "Sonny Michaud",
+      "email": "Michaud.sonny@gmail.com"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "soyuka",
+      "email": "soyuka@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Keymetrics/cli-table.git"
+  },
+  "keywords": [
+    "cli",
+    "colors",
+    "table"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.3"
+  },
+  "devDependencies": {
+    "expresso": "~0.9",
+    "should": "~0.6",
+    "standard": "^10.0.2"
+  },
+  "main": "lib",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">= 0.12"
+  },
+  "licence": "MIT"
 }
