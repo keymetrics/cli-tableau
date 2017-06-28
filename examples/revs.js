@@ -3,7 +3,7 @@
  * Module requirements.
  */
 
-var Table = require('../lib');
+var Table = require('../lib')
 
 /**
  * Example.
@@ -11,49 +11,45 @@ var Table = require('../lib');
 
 /* col widths */
 var table = new Table({
-    head: ['Rel', 'Change', 'By', 'When']
-  , colWidths: [6, 21, 25, 17]
-});
+  head: ['Rel', 'Change', 'By', 'When'],
+  colWidths: [6, 21, 25, 17]
+})
 
 table.push(
     ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago']
   , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
-);
+)
 
-console.log(table.toString());
-
+console.log(table.toString())
 
 /* compact */
-var table = new Table({
-    head: ['Rel', 'Change', 'By', 'When']
-  , colWidths: [6, 21, 25, 17]
-  , style : {compact : true, 'padding-left' : 1}
-});
+var table2 = new Table({
+  head: ['Rel', 'Change', 'By', 'When'],
+  colWidths: [6, 21, 25, 17],
+  style: {compact: true, 'padding-left': 1}
+})
 
-table.push(
+table2.push(
     ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago']
   , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
   , []
   , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
-);
+)
 
-console.log(table.toString());
+console.log(table.toString())
 
 /* headless */
-var headless_table = new Table();
-headless_table.push(['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago']);
-console.log(headless_table.toString());
+var headlessTable = new Table()
+headlessTable.push(['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago'])
+console.log(headlessTable.toString())
 
 /* vertical */
-var vertical_table = new Table();
-vertical_table.push({ "Some Key": "Some Value"},
-                    { "Another much longer key": "And its corresponding longer value"}
-);
+var verticalTable = new Table()
+verticalTable.push({'Some Key': 'Some Value'}, {'Another much longer key': 'And its corresponding longer value'})
 
-console.log(vertical_table.toString());
+console.log(verticalTable.toString())
 
 /* cross */
-var cross_table = new Table({ head: ["", "Header #1", "Header #2"] });
-cross_table.push({ "Header #3": ["Value 1", "Value 2"] },
-                 { "Header #4": ["Value 3", "Value 4"] });
-console.log(cross_table.toString());
+var crossTable = new Table({head: ['', 'Header #1', 'Header #2']})
+crossTable.push({'Header #3': ['Value 1', 'Value 2']}, {'Header #4': ['Value 3', 'Value 4']})
+console.log(crossTable.toString())
