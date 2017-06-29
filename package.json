@@ -1,7 +1,7 @@
 {
   "name": "cli-table-redemption",
   "description": "Pretty unicode tables for the CLI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Guillermo Rauch",
     "email": "guillermo@learnboost.com"
