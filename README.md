@@ -1,4 +1,4 @@
-CLI Table [![NPM Version](http://badge.fury.io/js/cli-table-redemption.svg)](http://badge.fury.io/js/cli-table-redemption) [![Build Status](https://secure.travis-ci.org/keymetrics/cli-table.svg)](http://travis-ci.org/keymetrics/cli-table)
+CLI Table [![NPM Version](http://badge.fury.io/js/cli-table-redemption.svg)](http://badge.fury.io/js/cli-table-redemption) [![Build Status](https://travis-ci.org/keymetrics/cli-table-redemption.svg?branch=master)](https://travis-ci.org/keymetrics/cli-table-redemption)
 =========
 
 This is a fork maintained by [Keymetrics](https://keymetrics.io/) to help improving [pm2](http://github.com/Unitech/pm2)'s user experience!
