@@ -2,6 +2,7 @@ CLI Table [![NPM Version](http://badge.fury.io/js/cli-table-redemption.svg)](htt
 =========
 
 This is a fork maintained by [Keymetrics](https://keymetrics.io/) to help improving [pm2](http://github.com/Unitech/pm2)'s user experience!
+The original repository can be found on [Automattic/cli-table](https://github.com/Automattic/cli-table).
 
 This utility allows you to render unicode-aided tables on the command line from
 your node.js scripts.
@@ -152,16 +153,6 @@ Clone the repository with all its submodules and run:
 ```bash
 $ make test
 ```
-
-## Main changes on the `cli-table` fork
-
-Merges [cli-table/#83](https://github.com/Automattic/cli-table/pull/83) (test in [6d5d4b](https://github.com/keymetrics/cli-table/commit/6d5d4b293295e312ad1370e28f409e5a3ff3fc47)) to add array method names in the data set.
-
-Releases a fix on null/undefined values, [cli-table/#71](https://github.com/Automattic/cli-table/pull/71).
-
-Lint the code using [standard](https://github.com/standard/standard).
-
-Use `chalk` instead of `colors`.
 
 ## Credits
 
