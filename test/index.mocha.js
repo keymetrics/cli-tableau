@@ -1,4 +1,5 @@
 
+
 /**
  * Module requirements.
  */
@@ -11,40 +12,39 @@ var Table = require('../')
  * Tests.
  */
 
-module.exports = {
+describe('Table', function() {
+  it('should test complete table ', () => {
+      var table = new Table({
+        head: ['Rel', 'Change', 'By', 'When'],
+        style: {
+          'padding-left': 1,
+          'padding-right': 1,
+          head: [],
+          border: []
+        },
+        colWidths: [6, 21, 25, 17]
+      })
 
-  'test complete table': function () {
-    var table = new Table({
-      head: ['Rel', 'Change', 'By', 'When'],
-      style: {
-        'padding-left': 1,
-        'padding-right': 1,
-        head: [],
-        border: []
-      },
-      colWidths: [6, 21, 25, 17]
-    })
+      table.push(
+        ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago'],
+        ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
+      )
 
-    table.push(
-      ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago'],
-      ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
-    )
+      var expected = [
+        '┌──────┬─────────────────────┬─────────────────────────┬─────────────────┐',
+        '│ Rel  │ Change              │ By                      │ When            │',
+        '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤',
+        '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ 7 minutes ago   │',
+        '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤',
+        '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ 8 minutes ago   │',
+        '└──────┴─────────────────────┴─────────────────────────┴─────────────────┘'
+      ]
 
-    var expected = [
-      '┌──────┬─────────────────────┬─────────────────────────┬─────────────────┐',
-      '│ Rel  │ Change              │ By                      │ When            │',
-      '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤',
-      '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ 7 minutes ago   │',
-      '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤',
-      '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ 8 minutes ago   │',
-      '└──────┴─────────────────────┴─────────────────────────┴─────────────────┘'
-    ]
+      table.toString().should.eql(expected.join('\n'))
+      table.render().should.eql(expected.join('\n'))
+  })
 
-    table.toString().should.eql(expected.join('\n'))
-    table.render().should.eql(expected.join('\n'))
-  },
-
-  'test width property': function () {
+  it('test width property', function () {
     var table = new Table({
       head: ['Cool'],
       style: {
@@ -54,9 +54,9 @@ module.exports = {
     })
 
     table.width.should.eql(8)
-  },
+  })
 
-  'test vertical table output': function () {
+  it('test vertical table output', function () {
     var table = new Table({ style: {'padding-left': 0, 'padding-right': 0, head: [], border: []} }) // clear styles to prevent color output
 
     table.push(
@@ -73,9 +73,9 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test cross table output': function () {
+  it('test cross table output', function () {
     var table = new Table({ head: ['', 'Header 1', 'Header 2'], style: {'padding-left': 0, 'padding-right': 0, head: [], border: []} }) // clear styles to prevent color output
 
     table.push(
@@ -94,9 +94,9 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test table colors': function () {
+  it('test table colors', function () {
     var table = new Table({
       head: ['Rel', 'By'],
       style: {head: ['red'], border: ['grey']}
@@ -107,7 +107,7 @@ module.exports = {
     var orange = '\u001b[38;5;221m'
     var grey = '\u001b[90m'
 
-      c256s = orange + 'v0.1' + off
+    c256s = orange + 'v0.1' + off
 
     table.push([c256s, 'rauchg@gmail.com'])
 
@@ -120,9 +120,9 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test custom chars': function () {
+  it('test custom chars', function () {
     var table = new Table({
       chars: {
         'top': '═',
@@ -155,9 +155,9 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test compact shortand': function () {
+  it('test compact shortand', function () {
     var table = new Table({
       style: {
         head: [],
@@ -176,9 +176,9 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test compact empty mid line': function () {
+  it('test compact empty mid line', function () {
     var table = new Table({
       chars: {
         'mid': '',
@@ -202,9 +202,9 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test decoration lines disabled': function () {
+  it('test decoration lines disabled', function () {
     var table = new Table({
       chars: {
         'top': '',
@@ -239,9 +239,9 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test with null/undefined as values or column names': function () {
+  it('test with null/undefined as values or column names', function () {
     var table = new Table({
       head: [null, undefined, 0, ''],
       style: {
@@ -251,7 +251,7 @@ module.exports = {
     })
 
     table.push(
-        [null, undefined, 0, '']
+      [null, undefined, 0, '']
     )
 
     var expected = [
@@ -263,10 +263,11 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
- 'test with toString things': function() {
+  })
 
-     var table = new Table({
+  it('test with toString things', function() {
+
+    var table = new Table({
       head: ['Some test toString', 'foo'],
       style: {
         head: [],
@@ -285,10 +286,11 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
- 'test with array method values': function() {
+  })
 
-     var table = new Table({
+  it('test with array method values', function() {
+
+    var table = new Table({
       head: ['pop', 'push', 'slice'],
       style: {
         head: [],
@@ -307,5 +309,5 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  }
-}
+  })
+})

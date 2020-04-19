@@ -10,8 +10,8 @@ var Table = require('../')
  * Tests.
  */
 
-module.exports = {
-  'test table with newlines in headers': function () {
+describe('', function() {
+  it('test table with newlines in headers', function () {
     var table = new Table({
       head: ['Test', '1\n2\n3'],
       style: {
@@ -31,14 +31,14 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test column width is accurately reflected when newlines are present': function () {
+  it('test column width is accurately reflected when newlines are present', function () {
     var table = new Table({ head: ['Test\nWidth'], style: {head: [], border: []} })
     table.width.should.eql(9)
-  },
+  })
 
-  'test newlines in body cells': function () {
+  it('test newlines in body cells', function () {
     var table = new Table({style: {head: [], border: []}})
 
     table.push(['something\nwith\nnewlines'])
@@ -52,13 +52,13 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test newlines in vertical cell header and body': function () {
+  it('test newlines in vertical cell header and body', function () {
     var table = new Table({ style: {'padding-left': 0, 'padding-right': 0, head: [], border: []} })
 
     table.push(
-        {'v\n0.1': 'Testing\nsomething cool'}
+      {'v\n0.1': 'Testing\nsomething cool'}
     )
 
     var expected = [
@@ -69,9 +69,9 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  },
+  })
 
-  'test newlines in cross table header and body': function () {
+  it('test newlines in cross table header and body', function () {
     var table = new Table({ head: ['', 'Header\n1'], style: {'padding-left': 0, 'padding-right': 0, head: [], border: []} })
 
     table.push({ 'Header\n2': ['Testing\nsomething\ncool'] })
@@ -88,5 +88,5 @@ module.exports = {
     ]
 
     table.toString().should.eql(expected.join('\n'))
-  }
-}
+  })
+})

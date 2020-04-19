@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0
+
+- Adapt test to mocha
+- Replace manual padding with .padEnd
+- Allow only Node 8
+- Update travis test suite
+- Upgrade chalk to 3.0.0
+
 ## Jun 28, 2017
 
 Fork of `Automattic/cli-table`
