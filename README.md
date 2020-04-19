@@ -1,9 +1,14 @@
 
-# cli table
+# cli tableau
+
+<a href="https://travis-ci.org/github/keymetrics/cli-tableau" title="PM2 Tests">
+  <img src="https://travis-ci.org/keymetrics/cli-tableau.svg?branch=master" alt="Build Status"/>
+</a>
+
 
 ### Horizontal Tables
 ```javascript
-var Table = require('cli-table-redemption');
+var Table = require('cli-tableau');
 
 var table = new Table({
     head: ['TH 1 label', 'TH 2 label'],
@@ -22,7 +27,7 @@ console.log(table.toString());
 ### Vertical Tables
 
 ```javascript
-var Table = require('cli-table-redemption');
+var Table = require('cli-tableau');
 var table = new Table();
 
 table.push(
@@ -40,7 +45,7 @@ Cross tables are very similar to vertical tables, with two key differences:
 2. The individual rows take the general form of { "Header": ["Row", "Values"] }
 
 ```javascript
-var Table = require('cli-table-redemption');
+var Table = require('cli-tableau');
 var table = new Table({ head: ["", "Top Header 1", "Top Header 2"] });
 
 table.push(
