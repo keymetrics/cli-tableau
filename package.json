@@ -31,7 +31,8 @@
     "table"
   ],
   "dependencies": {
-    "chalk": "3.0.0"
+    "chalk": "3.0.0",
+    "slice-ansi": "3.0.0"
   },
   "devDependencies": {
     "should": "~0.6",
