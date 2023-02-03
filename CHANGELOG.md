@@ -3,6 +3,7 @@
 ## 2.0.2
 
 - fix(security): :lock: Prototype Pollution in cli-tableau
+- feat(test): :lock: Prototype Pollution security test
 
 ## 2.0.0
 
