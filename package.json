@@ -1,7 +1,7 @@
 {
   "name": "cli-tableau",
   "description": "Pretty unicode tables for the CLI",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "engines": {
     "node": ">=8.10.0"
   },
@@ -34,8 +34,8 @@
     "chalk": "3.0.0"
   },
   "devDependencies": {
-    "should": "~0.6",
-    "mocha": "^7.1.1"
+    "mocha": "^10.2.0",
+    "should": "~0.6"
   },
   "main": "lib",
   "files": [
