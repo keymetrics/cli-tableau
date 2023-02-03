@@ -5,8 +5,8 @@
   <img src="https://travis-ci.org/keymetrics/cli-tableau.svg?branch=master" alt="Build Status"/>
 </a>
 
-
 ### Horizontal Tables
+
 ```javascript
 var Table = require('cli-tableau');
 
@@ -39,6 +39,7 @@ console.log(table.toString());
 ```
 
 ### Cross Tables
+
 Cross tables are very similar to vertical tables, with two key differences:
 
 1. They require a `head` setting when instantiated that has an empty string as the first header
@@ -59,6 +60,7 @@ console.log(table.toString());
 ### Custom styles
 
 The ```chars``` property controls how the table is drawn:
+
 ```javascript
 var table = new Table({
   chars: {
@@ -86,6 +88,7 @@ console.log(table.toString());
 
 Empty decoration lines will be skipped, to avoid vertical separator rows just
 set the 'mid', 'left-mid', 'mid-mid', 'right-mid' to the empty string:
+
 ```javascript
 var table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
 table.push(
@@ -104,6 +107,7 @@ console.log(table.toString());
 By setting all chars to empty with the exception of 'middle' being set to a
 single space and by setting padding to zero, it's possible to get the most
 compact layout with no decorations:
+
 ```javascript
 var table = new Table({
   chars: {
